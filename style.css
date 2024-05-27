@@ -1,0 +1,119 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.slider {
+    /* position: relative; */
+    width: 100vw;
+    height: 45vh;
+    overflow: auto;
+    background-color: antiquewhite;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .4s linear;
+}
+.active {
+    opacity: 1;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    opacity: 0.1;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.slide .inner {
+    max-width: 100%;
+    max-height: 45%;
+    min-height: 20%;
+    position: absolute;
+    overflow: auto;/* sadece dağ slaytında scroll yapabiliyorum neden diğerlerinde olmuyor*/
+    bottom: 4%;
+    background-color: rgba(40, 30, 30, .7);
+    color: #eee;
+    padding: 10px;
+    padding-bottom: 0px;
+    opacity: 0;
+    margin-bottom: 3px;
+}
+.slide.active .inner {
+    opacity: 1;
+}
+.slide:nth-child(1) {
+    background: url(/imgs/nature1.jpg) no-repeat center/cover
+}
+.slide:nth-child(2) {
+    background: url(/imgs/nature2.jpg) no-repeat center/cover
+}
+.slide:nth-child(3) {
+    background: url(/imgs/nature3.jpg) no-repeat center/cover
+}
+.slide:nth-child(4) {
+    background: url(/imgs/nature4.jpg) no-repeat center/cover
+}
+.slide:nth-child(5) {
+    background: url(/imgs/nature5.jpg) no-repeat center/cover
+}
+.indicator button {
+    
+    cursor: pointer;
+    border: 0;
+    z-index: 1;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, .0);
+    color: #eee;
+}
+#prev {
+    position: absolute;
+    top: 40%;
+    left: 5px;
+}
+#next {
+    position: absolute;
+    top: 40%;
+    right: 5px;
+}
+.slider-pagination{
+
+    width: 100%;
+    position: absolute;
+    bottom: 0px;    
+    text-align: center;
+}
+.slider-pagination-bullet{
+    opacity: 0.5;
+    background-color: rgb(232, 224, 224) ;
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 5px;
+    border-radius: 0.3rem;
+    border: solid rgb(18, 17, 17) 1px;
+    margin: 0px 4px;
+}
+.slider-pagination-bullet:hover {
+    background-color: blue;
+}
+.indicator button:hover {
+    color: blue;
+    font-size: 30px;
+    opacity: 0.7;
+}
